@@ -4,6 +4,7 @@ WrongCat::WrongCat(void) : WrongAnimal()
 {
 	// std::cout << "Default WrongCat constructor called" << std::endl;
 	_type = "WrongCat";
+	_brain = new Brain();
 }
 
 WrongCat::WrongCat(const WrongCat &WrongCat)
@@ -15,19 +16,27 @@ WrongCat::WrongCat(const WrongCat &WrongCat)
 WrongCat::~WrongCat(void)
 {
 	// std::cout << "WrongCat Destructor called" << std::endl;
+	delete _brain;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat &beast)
 {
 	if (this != &beast)
+	{
 		this->_type = beast.getType();
-	std::cout << beast.getType() << "TRALALERO TRALALA << std::endl" << std::endl;
+		this->_brain = beast._brain;
+	}
 	return *this;
 }
 
 void	WrongCat::makeSound() const
 {
 	std::cout << getType() << " sound." << std::endl;
+}
+
+void	WrongCat::think() const
+{
+	this->_brain->showIdea();
 }
 
 std::string	WrongCat::getType() const

@@ -2,6 +2,7 @@
 # define CAT_H
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 #include <iostream>
 #include <iomanip>
@@ -10,10 +11,12 @@
 
 class Cat : public Animal
 {
-	protected:
+	private:
+		Brain* _brain;
 
 	public:
 		void		makeSound() const;
+		void		think() const;
 		std::string	getType() const;
 
 		Cat& operator=(const Cat &beast);

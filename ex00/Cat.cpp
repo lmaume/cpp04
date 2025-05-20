@@ -21,7 +21,6 @@ Cat& Cat::operator=(const Cat &beast)
 {
 	if (this != &beast)
 		this->_type = beast.getType();
-	std::cout << beast.getType() << "TRALALERO TRALALA << std::endl" << std::endl;
 	return *this;
 }
 

@@ -2,6 +2,7 @@
 # define WRONGCAT_H
 
 #include "WrongAnimal.hpp"
+#include "Brain.hpp"
 
 #include <iostream>
 #include <iomanip>
@@ -10,10 +11,12 @@
 
 class WrongCat : public WrongAnimal
 {
-	protected:
+	private:
+		Brain* _brain;
 
 	public:
 		void		makeSound() const;
+		void		think() const;
 		std::string	getType() const;
 
 		WrongCat& operator=(const WrongCat &beast);
